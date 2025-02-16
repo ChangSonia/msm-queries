@@ -57,6 +57,9 @@
 
 <hr>
 
+
+<%matching_movies = Movie.where({:director_id => @the_director.id})%>
+
 <h2>Filmography</h2>
 
 <table border="1">
@@ -87,35 +90,16 @@
 
 
   
-
+  <% matching_movies.each do |the_movie| %>
   <tr>
-    <td>
-      34
-    </td>
-
-    <td>
-      <img src="https://image.tmdb.org/t/p/w500/cBwZIq1QFasmsC9Wi3HvyEljfYN.jpg" style="width:250px;">
-    </td>
-
-    <td>
-      Vice
-    </td>
-
-    <td>
-      2015
-    </td>
-
-    <td>
-      Brian A. Miller
-    </td>
-
-    <td>
-      <a href="/movies/34">
-        Show details
-      </a>
-    </td>
+    <td><%= the_movie.id %></td>
+    <td><img src="<%= the_movie.image %>" style="width:250px;"></td>
+    <td><%= the_movie.title %></td>
+    <td><%= the_movie.year %></td>
+    <td><%= @the_director.name %></td>
+    <td><a href="/movies/<%= the_movie.id %>">Show details</a></td>
   </tr>
+<% end %>
 </table>
 
-    <a href="/about.html">About</a>
-  </body>
+

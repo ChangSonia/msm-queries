@@ -6,5 +6,4 @@ Rails.application.routes.draw do
   get("/directors/eldest", { :controller => "directors", :action => "eldest" })
   get("/movies", { :controller => "movies", :action => "index" })
   get("/actors", { :controller => "actors", :action => "index" })
-  get("/about.html",{:controller => "misc", :action => "about"})
 end
