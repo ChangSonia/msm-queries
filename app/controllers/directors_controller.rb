@@ -14,7 +14,7 @@ class DirectorsController < ApplicationController
   end
 
   def youngest
-    director_sort = Director.where.not(dob: nil).order(dob: :dsc)
+    director_sort = Director.where.not(dob: nil).order(dob: :desc)
 
     @director_youngest = director_sort.first
 
