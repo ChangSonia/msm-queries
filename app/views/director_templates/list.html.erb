@@ -30,23 +30,24 @@
 <% Director.all.each do |a_director|%>
   <tr>
     <td>
-      <%a_director.id%>
+      <%=a_director.id%>
     </td>
 
     <td>
-      <img src=<%a_director.image%> style="width:250px;">
+      <img src=<%=a_director.image%> style="width:250px;">
     </td>
 
     <td>
-      <%a_director.name%>
+      <%=a_director.name%>
+    </td>
+    
+    <td>
+      <%=a_director.dob%>
+
     </td>
 
     <td>
-      
-    </td>
-
-    <td>
-      <a href="/directors/<%a_director.id%>">
+      <a href="/directors/<%=a_director.id%>">
         Show details
       </a>
     </td>
